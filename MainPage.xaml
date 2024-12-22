@@ -19,6 +19,11 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
+            <Image 
+                x:Name="AuslosaBildle" 
+                IsAnimationPlaying="False" 
+                Source="auslosa.gif" />
+
             <Button
                 x:Name="AuslosaButton"
                 Text="Kasch mi auslosa?" 
