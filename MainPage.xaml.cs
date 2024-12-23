@@ -12,6 +12,7 @@ public partial class MainPage : ContentPage
 
     private async void OnAuslosaRequested(object sender, EventArgs e)
     {
+        AuslosaBildle.Source = "auslosa.gif";
         if (!Int32.TryParse(AppAiInputEntry.Text, out int wieVielMitmachet))
         {
             AppAiOutputLabel.Text = "Gib a Zahl ei, Seckel.";
@@ -35,7 +36,6 @@ public partial class MainPage : ContentPage
             return;
         }
         AuslosaButton.IsEnabled = false;
-        AuslosaBildle.Source = "auslosa.gif";
         AuslosaBildle.IsAnimationPlaying = true;
         ThinkingIndicator.IsRunning = true;
         AppAiOutputLabel.Text = "Wart ...";
