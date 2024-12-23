@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Auslosa.MainPage">
+             x:Class="Auslosa.MainPage"
+             Shell.NavBarIsVisible="False">
 
     <ScrollView>
         <VerticalStackLayout
@@ -9,7 +10,28 @@
             Padding="30,0"
             Spacing="25">
 
+            <Grid ColumnDefinitions="*,*">
+                <Label
+        x:Name="MitspielerLabel"
+        Style="{StaticResource SubHeadline}"
+        SemanticProperties.HeadingLevel="Level7"
+        Text="Spieler:" />
+                <Entry Grid.Column="1"
+                       x:Name="AppAiInputEntry"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       Placeholder="Wie viel?" 
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="White"
+                       HorizontalOptions="Center"
+                       Keyboard="Numeric"/>
+            </Grid>         
+
+
             <ActivityIndicator 
+                IsVisible="False"
                 x:Name="ThinkingIndicator"
                 IsRunning="false" />
 
@@ -19,12 +41,29 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
+            <Image 
+                x:Name="AuslosaBildle" 
+                IsAnimationPlaying="False" 
+                Source="auslosa.gif" />
+
             <Button
                 x:Name="AuslosaButton"
                 Text="Kasch mi auslosa?" 
                 Clicked="OnAuslosaRequested"
                 HorizontalOptions="Fill" />
+
+            <Grid ColumnDefinitions="*,*">
+                <Label
+                    x:Name="WieVielObaSind"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level3"
+                    Text="Oba: 0" />
+                <Label Grid.Column="1" HorizontalTextAlignment="End"
+                    x:Name="WieVielUntaSind"
+                       Style="{StaticResource Headline}"
+                       SemanticProperties.HeadingLevel="Level3"
+                    Text="Unta: 0" />
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
